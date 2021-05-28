@@ -5148,7 +5148,7 @@ input[type="button"].btn-block {
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: #2cad6f49;
-  border-top: 0 solid rgba(0, 0, 0, 0.125);
+  border-top: 0 solid rgba(29, 173, 113, 0.125);
 }
 
 .card-footer:last-child {
@@ -12439,7 +12439,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .main-footer {
   background-color: #2cad6f49;
   border-top: 1px solid #dee2e6;
-  color: #869099;
+  color: #000000;
   padding: 1rem;
 }
 
