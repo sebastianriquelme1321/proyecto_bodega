@@ -18,5 +18,4 @@
 @section('js')
 
 
-
-@stopphp
+@stop
