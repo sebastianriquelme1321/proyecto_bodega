@@ -5147,7 +5147,7 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #2cad6f49;
+  background-color: #023b20ef;
   border-top: 0 solid rgba(29, 173, 113, 0.125);
 }
 
@@ -12437,7 +12437,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .main-footer {
-  background-color: #2cad6f49;
+  background-color: #024223d8;
   border-top: 1px solid #dee2e6;
   color: #000000;
   padding: 1rem;
@@ -18247,7 +18247,7 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-green {
-  background-color: #2cad6f49;
+  background-color: #024223d8;
   color: #fff;
 }
 
