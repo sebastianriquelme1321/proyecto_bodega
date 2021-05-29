@@ -27,6 +27,8 @@
  @stop
 
 
-            @section('js')
+@section('js')
 
-            @stop
+
+
+stop
