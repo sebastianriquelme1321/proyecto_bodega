@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\recepcion_de_bodega;
+use App\recepcion_bodega;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -17,7 +17,7 @@ class RecepcionDeBodegaController extends Controller
     {
         //$provedores=Http::get('https://api.3e.cl/api/proveedor');
         ///$lista_provedor=$provedores->json();
-        //$datos['empresa'] = recepcion_de_bodega::paginate();        
+        //$datos['empresa'] = recepcion_bodega::paginate();        
         return view('recepciondebodega.index');
     }
 
@@ -45,10 +45,10 @@ class RecepcionDeBodegaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\recepcion_de_bodega  $recepcion_de_bodega
+     * @param  \App\recepcion_bodega  $recepcion_bodega
      * @return \Illuminate\Http\Response
      */
-    public function show(recepcion_de_bodega $recepcion_de_bodega)
+    public function show(recepcion_bodega $recepcion_bodega)
     {
         //
     }
@@ -56,10 +56,10 @@ class RecepcionDeBodegaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\recepcion_de_bodega  $recepcion_de_bodega
+     * @param  \App\recepcion_bodega  $recepcion_bodega
      * @return \Illuminate\Http\Response
      */
-    public function edit(recepcion_de_bodega $recepcion_de_bodega)
+    public function edit(recepcion_bodega $recepcion_bodega)
     {
         //
     }
@@ -68,10 +68,10 @@ class RecepcionDeBodegaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\recepcion_de_bodega  $recepcion_de_bodega
+     * @param  \App\recepcion_bodega  $recepcion_bodega
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, recepcion_de_bodega $recepcion_de_bodega)
+    public function update(Request $request, recepcion_bodega $recepcion_bodega)
     {
         //
     }
@@ -79,10 +79,10 @@ class RecepcionDeBodegaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\recepcion_de_bodega  $recepcion_de_bodega
+     * @param  \App\recepcion_bodega  $recepcion_bodega
      * @return \Illuminate\Http\Response
      */
-    public function destroy(recepcion_de_bodega $recepcion_de_bodega)
+    public function destroy(recepcion_bodega $recepcion_bodega)
     {
         //
     }
