@@ -3,14 +3,14 @@
 @section('title', 'Departamento')
 
 @section('content_header')
-<h1>Visto bueno Quien Solicita OP</h1>
+<h1>Recepcion de bodega OP</h1>
 
 @stop
 
 @section('content')
     <div class="row">
 
-        <h4><b>Empresa</b></h4>
+        <h4><b>Proveedores</b></h4>
     </div>
 
     <div class="form-group">
