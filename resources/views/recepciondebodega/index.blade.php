@@ -28,113 +28,130 @@
 <div class="card">
     <div class="card-header">
         {{--  Lista de radios  --}}
-        <div class="form-group">
+       <center>
+        
+            
+            <div class="form-check-inline col-2">
+                
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                </div>
+            </div> 
 
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
+            <div class="form-check-inline col-2">   
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
+            <div class="form-check-inline col-2">    
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="radio1" checked="">
-                    <label class="form-check-label">Radio checked</label>
+            <div class="form-check-inline col-2">    
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Radio checked</label>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
+        
+    </center>
 
     </div>
     <!-- /.card-header -->
 
     <div class="card-header">
         {{-- Segunda Lista de radios  --}}
-        <div class="form-group">            
+                 
+        <center>
 
             <div class="form-group">
-                <div class="form-check">
+                <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
                     <label class="form-check-label">Radio checked</label>
                 </div>
-                <div class="form-check">
+                <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
                     <label class="form-check-label">Radio checked</label>
                 </div>
-                <div class="form-check">
+                <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
                     <label class="form-check-label">Radio checked</label>
                 </div>
             </div>           
 
-        </div>
+        </center>
 
 
     </div>
     <!-- /.card-header -->
 
-    <div class="card-header">
+    <div class="card">
         {{-- Buscadores  --}}
-        <h5><b>Texto para buscar:</b></h5>
-        <input type="text" name="" id="">
-
-        <h5><b>Nº OP</b></h5>
-        <input type="text" name="" id="">
-
-        <br><br>
-
+        <br>
+        
+        <div class="form-row">
+            <div class="col-1"></div>
+            <div class="col-md-5 mb-3">
+              <h5><b>Texto para buscar:</b></h5>
+              <input type="text" class="form-control" id="">
+            </div>
+            <div class="col-md-4 mb-3">
+              <h5><b>Nº OP:</b></h5>
+              <input type="text" class="form-control" id="">
+            </div>            
+        </div>
+        
         <button type="button" class="btn btn-block btn-primary">Buscar</button>
 
     </div>
