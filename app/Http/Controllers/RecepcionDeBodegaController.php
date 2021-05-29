@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\recepcion_bodega;
+use App\documento_tributario;
+use App\proovedor;
+use App\usuario;
+use App\unidad_negocio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -17,8 +21,12 @@ class RecepcionDeBodegaController extends Controller
     {
         //$provedores=Http::get('https://api.3e.cl/api/proveedor');
         ///$lista_provedor=$provedores->json();
-        //$datos['empresa'] = recepcion_bodega::paginate();        
-        return view('recepciondebodega.index');
+        //$datos['empresa'] = recepcion_bodega::paginate();  
+        
+        $proveedores = proovedor::get();
+                
+
+        return view('recepciondebodega.index',compact('proveedores'));
     }
 
     /**
