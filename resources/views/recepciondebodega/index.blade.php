@@ -16,14 +16,15 @@
     <div class="form-group">
 
         <select name="" id="" class="form-control custom-select">
+            
             <option value="">-- Todas --</option>
+            @foreach ($lista_final as $p)            
+             <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
+            @endforeach            
+            
         </select>
 
-    </div>
-
-    @foreach ($lista_final as $p)
-    <h5>{{$p['descripcion']}}</h5>
-@endforeach
+    </div>  
 
 
 
