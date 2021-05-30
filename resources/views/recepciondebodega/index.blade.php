@@ -1,6 +1,6 @@
-@extends('adminlte::page')
 
-@section('title', 'Departamento')
+    protected $table ='recurso_unidad_negocio';
+    protected $primaryKey = 'run_id';
 
 @section('content_header')
 <h1>Recepcion de bodega OP</h1>
@@ -344,3 +344,10 @@
 
 </script>
 @stop
+    public function scopeRecurso($query,$unidad_negocio)
+    {
+      if($unidad_negocio)
+      {
+          return $query->where('unn_id','like',$unidad_negocio);
+      }
+    }
