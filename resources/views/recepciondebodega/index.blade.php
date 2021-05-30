@@ -32,7 +32,11 @@
         
             <div class="form-group col-4">
                 <select name="" id="empresa" class="form-control custom-select">                    
-                    <option value="">-- Todas --</option>                              
+                    <option value="">-- Todas --</option>        
+                    
+                    @foreach($empresas as $emp)
+                    <option value="{{$emp->emp_id}}">{{$emp->emp_descripcion}}</option>
+                    @endforeach
                     
                 </select>     
             </div>  

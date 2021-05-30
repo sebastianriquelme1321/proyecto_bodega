@@ -7,6 +7,7 @@ use App\documento_tributario;
 use App\proovedor;
 use App\usuario;
 use App\unidad_negocio;
+use App\empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -20,7 +21,6 @@ class RecepcionDeBodegaController extends Controller
     public function index()
     {
         $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
-        //$datos['empresa'] = recepcion_bodega::paginate();  
         $lista_prv=$proveedores->json();
         $lista_final=[];
         $auxiliar=0;
@@ -32,14 +32,12 @@ class RecepcionDeBodegaController extends Controller
             }
             $auxiliar++;
         }
-    
-        
+        $empresas=empresa::all();
 
-        
         //$proveedores = proovedor::get();
                 
 
-        return view('recepciondebodega.index',compact('lista_final'));
+        return view('recepciondebodega.index',compact('lista_final','empresas'));
     }
 
     /**
@@ -106,5 +104,15 @@ class RecepcionDeBodegaController extends Controller
     public function destroy(recepcion_bodega $recepcion_bodega)
     {
         //
+    }
+
+    public function GetUnidadNegocio(request $empresa)
+    {
+       if($empresa->ajax )
+       {
+           $unidad_negocio=unidad_negocio::recurso($empresa)->get()->json;
+       
+       }
+
     }
 }
