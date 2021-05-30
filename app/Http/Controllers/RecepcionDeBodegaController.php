@@ -110,7 +110,7 @@ class RecepcionDeBodegaController extends Controller
     {
        if($empresa->ajax )
        {
-           $unidad_negocio=unidad_negocio::recurso($empresa)->get();
+           $unidad_negocio=unidad_negocio::recurso($empresa)->get;
        }
 
        return response()->json($unidad_negocio);
