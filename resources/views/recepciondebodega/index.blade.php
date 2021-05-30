@@ -352,10 +352,4 @@
 
 </script>
 @stop
-    public function scopeRecurso($query,$unidad_negocio)
-    {
-      if($unidad_negocio)
-      {
-          return $query->where('unn_id','like',$unidad_negocio);
-      }
-    }
+ 
