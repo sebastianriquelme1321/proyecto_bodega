@@ -21,6 +21,9 @@
 
     </div>
 
+    @foreach ($proveedores as $p)
+    <h5>{{$p->prv_razon_social}}</h5>
+@endforeach
 
 
 
