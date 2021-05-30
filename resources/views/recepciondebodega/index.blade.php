@@ -21,8 +21,8 @@
 
     </div>
 
-    @foreach ($proveedores as $p)
-    <h5>{{$p->prv_razon_social}}</h5>
+    @foreach ($lista_final as $p)
+    <h5>{{$p['descripcion']}}</h5>
 @endforeach
 
 

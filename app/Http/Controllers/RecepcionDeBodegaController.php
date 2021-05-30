@@ -19,14 +19,27 @@ class RecepcionDeBodegaController extends Controller
      */
     public function index()
     {
-        //$provedores=Http::get('https://api.3e.cl/api/proveedor');
-        ///$lista_provedor=$provedores->json();
+        $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
         //$datos['empresa'] = recepcion_bodega::paginate();  
+        $lista_prv=$proveedores->json();
+        $lista_final=[];
+        $auxiliar=0;
+        foreach ($lista_prv as $p){
+            if($auxiliar>0)
+            {
+               $lista_final=$p;
+            
+            }
+            $auxiliar++;
+        }
+    
         
-        $proveedores = proovedor::get();
+
+        
+        //$proveedores = proovedor::get();
                 
 
-        return view('recepciondebodega.index',compact('proveedores'));
+        return view('recepciondebodega.index',compact('lista_final'));
     }
 
     /**
