@@ -106,13 +106,14 @@ class RecepcionDeBodegaController extends Controller
         //
     }
 
-    public function GetUnidadNegocio(request $empresa)
+    public function getUnidadNegocio(request $empresa)
     {
        if($empresa->ajax )
        {
-           $unidad_negocio=unidad_negocio::recurso($empresa)->get()->json;
-       
+           $unidad_negocio=unidad_negocio::recurso($empresa)->get();
        }
+
+       return response()->json($unidad_negocio);
 
     }
 }
