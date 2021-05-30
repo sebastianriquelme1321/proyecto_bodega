@@ -9,4 +9,15 @@ class unidad_negocio extends Model
     //
     protected $table ='unidad_negocio';
     protected $primaryKey = 'unn_id';
+
+
+    public function scopeUnidadnegocio($query,$empresa)
+    {
+      if($empresa)
+      {
+          return $query->where('emp_id','like',$empresa);
+      }
+    }
 }
+
+

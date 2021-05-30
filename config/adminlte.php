@@ -361,7 +361,7 @@ return [
             ],
         ],
     
-            'Plugin Name' => [
+            'Jquery' => [
                 'active' => true,
                 'files' => [
                     [
