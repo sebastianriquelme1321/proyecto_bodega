@@ -8,24 +8,83 @@
 @stop
 
 @section('content')
-    <div class="row">
-
-        <h4><b>Proveedores</b></h4>
+    <div class="card">   
+        <h4><b>Proveedores</b></h4>   
+    
+        <div class="form-check-inline col-4">
+            <div class="form-group">
+                <select name="" id="" class="form-control custom-select">
+                    
+                    <option value="">-- Todas --</option>
+                    @foreach ($lista_final as $p)            
+                    <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
+                    @endforeach            
+                    
+                </select>     
+            </div>  
+        </div>
     </div>
 
-    <div class="form-group">
-
-        <select name="" id="" class="form-control custom-select">
+    <div class="card">
             
-            <option value="">-- Todas --</option>
-            @foreach ($lista_final as $p)            
-             <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
-            @endforeach            
+            <h4><b>Empresa</b></h4>
+        
+            <div class="form-group col-4">
+                <select name="" id="empresa" class="form-control custom-select">                    
+                    <option value="">-- Todas --</option>                              
+                    
+                </select>     
+            </div>  
+
+
+            <h4><b>Unidad de negocio</b></h4>
+        
+            <div class="form-group col-4">
+                <select name="" id="unidadN" class="form-control custom-select">                    
+                    <option value="">-- Todas --</option>                              
+                    
+                </select>     
+            </div>  
+        
+            <div class="form-check-inline col-lg-6">   
+                <div class="form-group">
+                    <div class="form-check">
+                        <h4><b>Centro de costos</b></h4>
+                        <select name="" id="centroC" class="form-control custom-select">                    
+                            <option value="">-- Todas --</option>                              
+                            
+                        </select> 
+                    </div>
+                    <div class="form-check">
+                        <h4><b>Actividad</b></h4>
+                        <select name="" id="actividad" class="form-control custom-select">                    
+                            <option value="">-- Todas --</option>                              
+                            
+                        </select>   
+                    </div>                    
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <h4><b>Recursos</b></h4>
+                        <select name="" id="recursos" class="form-control custom-select">                    
+                            <option value="">-- Todas --</option>                              
+                            
+                        </select> 
+                    </div>
+                    <div class="form-check">
+                        <h4><b>Unidad de medida</b></h4>
+                        <select name="" id="unidadM" class="form-control custom-select">                    
+                            <option value="">-- Todas --</option>                              
+                            
+                        </select>   
+                    </div>                    
+                </div>
+            </div>
+
             
-        </select>
-
-    </div>  
-
+        
+    </div>
 
 
 <br>
@@ -219,7 +278,69 @@
 
 @section('js')
 <script>
-    console.log('Hi!');
+    $(document).ready(function(){
+
+        $('#empresa').on('change',function(){
+            var empresa_id = $(this).val();
+            if ($.trim(empresa_id) != ''){
+                $.get('unidadN',{empresa_id: empresa_id},function(unidadN){
+                    $('#unidadN').empty();
+                    $('#unidadN').append("<option value=''>-- Todas --</option>");
+                    $.each(unidadN, function(index, value){
+                        $('#unidadN').append("<option value='"+ index +"'>"+ value +"</option>");
+                    })
+                });
+            }
+        });
+
+        $('#unidadN').on('change',function(){
+            var unidadN_id = $(this).val();
+            if ($.trim(unidadN_id) != ''){
+                $.get('centroC',{unidadN_id: unidadN_id},function(centroC){
+                    $('#centroC').empty();
+                    $('#centroC').append("<option value=''>-- Todas --</option>");
+                    $.each(centroC, function(index, value){
+                        $('#centroC').append("<option value='"+ index +"'>"+ value +"</option>");
+                    })
+                });
+
+                $.get('recursos',{unidadN_id: unidadN_id},function(recursos){
+                    $('#recursos').empty();
+                    $('#recursos').append("<option value=''>-- Todas --</option>");
+                    $.each(recursos, function(index, value){
+                        $('#recursos').append("<option value='"+ index +"'>"+ value +"</option>");
+                    })
+                });
+            }
+        });
+
+        $('#centroC').on('change',function(){
+            var centroC_id = $(this).val();
+            if ($.trim(centroC_id) != ''){
+                $.get('actividad',{centroC_id: centroC_id},function(actividad){
+                    $('#actividad').empty();
+                    $('#actividad').append("<option value=''>-- Todas --</option>");
+                    $.each(actividad, function(index, value){
+                        $('#actividad').append("<option value='"+ index +"'>"+ value +"</option>");
+                    })
+                });
+            }
+        });
+
+        $('#recursos').on('change',function(){
+            var recursos_id = $(this).val();
+            if ($.trim(recursos_id) != ''){
+                $.get('unidadM',{recursos_id: recursos_id},function(unidadM){
+                    $('#unidadM').empty();
+                    $('#unidadM').append("<option value=''>-- Todas --</option>");
+                    $.each(unidadM, function(index, value){
+                        $('#unidadM').append("<option value='"+ index +"'>"+ value +"</option>");
+                    })
+                });
+            }
+        });
+
+    });
 
 </script>
 @stop
