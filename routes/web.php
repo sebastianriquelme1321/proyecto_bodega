@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource('recepciondebodega', '\App\Http\Controllers\RecepcionDeBodegaController');
+Route::get('/unidadN','\App\Http\Controllers\RecepcionDeBodegaController@getUnidadNegocio');
