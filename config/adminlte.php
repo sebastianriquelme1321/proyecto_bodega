@@ -359,18 +359,6 @@ return [
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                 ],
             ],
-        ],
-
-        'Jqury'=>[
-            'activate'=>true,
-            'files'=>[
-                'type'=>'js',
-                'asset'=>'true',
-                'location'=>'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'
-
-
-            ] 
-
         ]
     ],
 
