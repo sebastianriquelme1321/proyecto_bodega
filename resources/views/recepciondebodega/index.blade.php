@@ -1,6 +1,6 @@
+@extends('adminlte::page')
 
-    protected $table ='recurso_unidad_negocio';
-    protected $primaryKey = 'run_id';
+@section('title', 'Departamento')
 
 @section('content_header')
 <h1>Recepcion de bodega OP</h1>
@@ -26,6 +26,14 @@
     </div>
 
     <div class="card">
+    <div class="form-group">
+
+        <select name="" id="" class="form-control custom-select">
+            
+            <option value="">--Selecione un proveedor --</option>
+            @foreach ($lista_final as $p)            
+             <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
+            @endforeach            
             
             <h4><b>Empresa</b></h4>
         
