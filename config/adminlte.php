@@ -359,7 +359,20 @@ return [
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
                 ],
             ],
-        ]
+        ],
+    
+            'Plugin Name' => [
+                'active' => true,
+                'files' => [
+                    [
+                        'type' => 'js',
+                        'asset' => true,
+                        'location' => '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                    ],
+                ],
+            ],
+
+
     ],
 
     /*
