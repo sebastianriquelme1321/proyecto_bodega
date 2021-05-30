@@ -15,10 +15,10 @@
             <div class="form-group">
                 <select name="" id="" class="form-control custom-select">
                     
-                    <option value="">-- Todas --</option>
+                    <option value="">--Selecione un proveedor --</option>
                     @foreach ($lista_final as $p)            
                     <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
-                    @endforeach            
+                    @endforeach           
                     
                 </select>     
             </div>  
@@ -26,14 +26,7 @@
     </div>
 
     <div class="card">
-    <div class="form-group">
-
-        <select name="" id="" class="form-control custom-select">
-            
-            <option value="">--Selecione un proveedor --</option>
-            @foreach ($lista_final as $p)            
-             <option value="{{$p['codigo']}}">{{$p['descripcion']}}</option>
-            @endforeach            
+    <div class="form-group">              
             
             <h4><b>Empresa</b></h4>
         
