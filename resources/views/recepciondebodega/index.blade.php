@@ -7,10 +7,7 @@
 
 @stop
 
-@section('content')
-    <h4>{{$recurso_unidad}}</h4>
-
-    <h4>{{$lista_finalv2}}</h4>
+@section('content')   
 
     <div class="card">   
         <h4><b>Proveedores</b></h4>   
