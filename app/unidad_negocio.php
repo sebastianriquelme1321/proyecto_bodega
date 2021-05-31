@@ -12,10 +12,9 @@ class unidad_negocio extends Model
 
     public function scopeRecurso($query,$empresa)
     {
-      if($empresa)
-      {
-          return $query->where('emp_id',$empresa);
-      }
+     
+       return $query->where('emp_id',$empresa);
+      
     }
 
     public function Recurso()
