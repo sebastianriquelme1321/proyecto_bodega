@@ -10,7 +10,7 @@ class unidad_negocio extends Model
     protected $table ='unidad_negocio';
     protected $primaryKey = 'unn_id';
 
-    public function scopeRecurso($query,$empresa)
+    public function scopeUnidad($query,$empresa)
     {
      
        return $query->where('emp_id',$empresa);

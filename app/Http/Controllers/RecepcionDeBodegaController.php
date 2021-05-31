@@ -109,7 +109,7 @@ class RecepcionDeBodegaController extends Controller
     {
        
        
-      $unidad_negocio=unidad_negocio::recurso($empresa->input('empresa_id'))->get();
+      $unidad_negocio=unidad_negocio::Unidad($empresa->input('empresa_id'))->get();
        
 
        return response()->json($unidad_negocio);
