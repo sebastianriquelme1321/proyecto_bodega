@@ -35,9 +35,9 @@ class RecepcionDeBodegaController extends Controller
         $empresas=empresa::all();
 
         //$proveedores = proovedor::get();
-                
+        $ekide=unidad_negocio::recurso(2)->get();
 
-        return view('recepciondebodega.index',compact('lista_final','empresas'));
+        return view('recepciondebodega.index',compact('lista_final','empresas','ekide'));
     }
 
     /**
@@ -106,12 +106,9 @@ class RecepcionDeBodegaController extends Controller
         //
     }
 
-    public function getUnidadNegocio(request $empresa)
-    {
-       if($empresa->ajax())
-       {
-           $unidad_negocio=unidad_negocio::recurso($empresa)->get;
-       }
+    public function getUnidadNegocio(Request $empresa)
+    {       
+           $unidad_negocio=unidad_negocio::recurso($empresa)->get();      
 
        return response()->json($unidad_negocio);
 

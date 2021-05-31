@@ -25,6 +25,8 @@
         </div>
     </div>
 
+<h2>{{$ekide}}</h2>
+
     <div class="card">
     <div class="form-group">              
             
@@ -288,12 +290,17 @@
         $('#empresa').on('change',function(){
             var empresa_id = $(this).val();
             if ($.trim(empresa_id) != ''){
+
+                console.log(empresa_id);
+
                 $.get('unidadN',{empresa_id: empresa_id},function(unidadN){
                     $('#unidadN').empty();
-                    $('#unidadN').append("<option value=''>-- Todas --</option>");
-                    $.each(unidadN, function(index, value){
-                        $('#unidadN').append("<option value='"+ index +"'>"+ value +"</option>");
-                    })
+                    $('#unidadN').append("<option value=''>-- seleccione --</option>");
+                    console.log(unidadN);
+                    for(var x of unidadN){
+                        console.log('xd');
+                        $('#unidadN').append("<option value='"+ x.unn_id +"'>"+ x.unn_descripcion +"</option>");
+                    }                   
                 });
             }
         });

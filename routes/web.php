@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('recepciondebodega', '\App\Http\Controllers\RecepcionDeBodegaController');
+Route::get('recepciondebodega', '\App\Http\Controllers\RecepcionDeBodegaController@index');
 Route::get('/unidadN','\App\Http\Controllers\RecepcionDeBodegaController@getUnidadNegocio');
