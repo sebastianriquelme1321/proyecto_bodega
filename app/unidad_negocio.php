@@ -17,6 +17,13 @@ class unidad_negocio extends Model
           return $query->where('emp_id',$empresa);
       }
     }
+
+    public function Recurso()
+    {
+        
+      return $this->belongsToMany(recurso::class)->using(recurso_unidad_negocio::class);
+            
+    }
 }
 
 

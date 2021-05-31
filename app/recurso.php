@@ -10,9 +10,5 @@ class recurso extends Model
 
     protected $table ='recurso';
     protected $primaryKey = 'rec_id';
-    public function Recurso()
-    {
-               
-            
-    }
+    
 }

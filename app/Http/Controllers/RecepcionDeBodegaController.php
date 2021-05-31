@@ -129,10 +129,12 @@ class RecepcionDeBodegaController extends Controller
 
      public function getRecurso(Request $unidad_negocio_n)
      {
-        $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get('rec_id');
+        $unidad_negocio=unidad_negocio::find($unidad_negocio_n->input('unudadN_id'));
+        $recursos=$unidad_negocio->Recurso();
+
+        return response()->json($recursos);
+
         
-        $lista_final=recurso::Recurso($recurso_unidad->input('rec_id'))->get();
-        return response()->json($lista_final);
 
 
      }
