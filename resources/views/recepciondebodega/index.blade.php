@@ -25,7 +25,7 @@
         </div>
     </div>
 
-<h2>{{$ekide}}</h2>
+
 
     <div class="card">
     <div class="form-group">              

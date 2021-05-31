@@ -10,6 +10,7 @@ use App\unidad_negocio;
 use App\empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 class RecepcionDeBodegaController extends Controller
 {
@@ -22,22 +23,14 @@ class RecepcionDeBodegaController extends Controller
     {
         $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
         $lista_prv=$proveedores->json();
-        $lista_final=[];
-        $auxiliar=0;
-        foreach ($lista_prv as $p){
-            if($auxiliar>0)
-            {
-               $lista_final=$p;
-            
-            }
-            $auxiliar++;
-        }
+        $lista_final=$lista_prv['data'];
+
         $empresas=empresa::all();
 
         //$proveedores = proovedor::get();
-        $ekide=unidad_negocio::recurso(2)->get();
+                
 
-        return view('recepciondebodega.index',compact('lista_final','empresas','ekide'));
+        return view('recepciondebodega.index',compact('lista_final','empresas'));
     }
 
     /**
@@ -107,8 +100,11 @@ class RecepcionDeBodegaController extends Controller
     }
 
     public function getUnidadNegocio(Request $empresa)
-    {       
-           $unidad_negocio=unidad_negocio::recurso($empresa)->get();      
+    {
+       
+       
+      $unidad_negocio=unidad_negocio::recurso($empresa->input('empresa_id'))->get();
+       
 
        return response()->json($unidad_negocio);
 

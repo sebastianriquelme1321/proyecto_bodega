@@ -14,7 +14,7 @@ class unidad_negocio extends Model
     {
       if($empresa)
       {
-          return $query->where('emp_id','like',$empresa);
+          return $query->where('emp_id',$empresa);
       }
     }
 }
