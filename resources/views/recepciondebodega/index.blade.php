@@ -54,27 +54,11 @@
             </div>  
         
             <div class="form-check-inline col-lg-6">   
-                <div class="form-group">
-                    <div class="form-check">
-                        <h4><b>Centro de costos</b></h4>
-                        <select name="" id="centroC" class="form-control custom-select">                    
-                            <option value="">-- Todas --</option>                              
-                            
-                        </select> 
-                    </div>
-                    <div class="form-check">
-                        <h4><b>Actividad</b></h4>
-                        <select name="" id="actividad" class="form-control custom-select">                    
-                            <option value="">-- Todas --</option>                              
-                            
-                        </select>   
-                    </div>                    
-                </div>
-
+                
                 <div class="form-group">
                     <div class="form-check">
                         <h4><b>Recursos</b></h4>
-                        <select name="" id="recursos" class="form-control custom-select">                    
+                        <select name="" id="recurso" class="form-control custom-select">                    
                             <option value="">-- Todas --</option>                              
                             
                         </select> 
@@ -86,6 +70,17 @@
                             
                         </select>   
                     </div>                    
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-check ">
+                        <h4><b>Centro de costos</b></h4>
+                        <select name="" id="centroC" class="form-control custom-select">                    
+                            <option value="">-- Todas --</option>                              
+                            
+                        </select> 
+                    </div>
+                                       
                 </div>
             </div>
 
@@ -295,10 +290,8 @@
 
                 $.get('unidadN',{empresa_id: empresa_id},function(unidadN){
                     $('#unidadN').empty();
-                    $('#unidadN').append("<option value=''>-- seleccione --</option>");
-                    console.log(unidadN);
-                    for(var x of unidadN){
-                        console.log('xd');
+                    $('#unidadN').append("<option value=''>-- Todas --</option>");                    
+                    for(var x of unidadN){                        
                         $('#unidadN').append("<option value='"+ x.unn_id +"'>"+ x.unn_descripcion +"</option>");
                     }                   
                 });
@@ -311,43 +304,31 @@
                 $.get('centroC',{unidadN_id: unidadN_id},function(centroC){
                     $('#centroC').empty();
                     $('#centroC').append("<option value=''>-- Todas --</option>");
-                    $.each(centroC, function(index, value){
-                        $('#centroC').append("<option value='"+ index +"'>"+ value +"</option>");
-                    })
+                    for(var x of centroC){                        
+                        $('#centroC').append("<option value='"+ x.ceg_id +"'>"+ x.ceg_titulo +"</option>");
+                    }   
                 });
 
-                $.get('recursos',{unidadN_id: unidadN_id},function(recursos){
-                    $('#recursos').empty();
-                    $('#recursos').append("<option value=''>-- Todas --</option>");
-                    $.each(recursos, function(index, value){
-                        $('#recursos').append("<option value='"+ index +"'>"+ value +"</option>");
-                    })
-                });
-            }
-        });
-
-        $('#centroC').on('change',function(){
-            var centroC_id = $(this).val();
-            if ($.trim(centroC_id) != ''){
-                $.get('actividad',{centroC_id: centroC_id},function(actividad){
-                    $('#actividad').empty();
-                    $('#actividad').append("<option value=''>-- Todas --</option>");
-                    $.each(actividad, function(index, value){
-                        $('#actividad').append("<option value='"+ index +"'>"+ value +"</option>");
-                    })
+                $.get('recurso',{unidadN_id: unidadN_id},function(recurso){
+                    $('#recurso').empty();
+                    $('#recurso').append("<option value=''>-- Todas --</option>");
+                    for(var x of recurso){                        
+                        $('#centroC').append("<option value='"+ x.rec_id +"'>"+ x.rec_descripcion +"</option>");
+                    }   
                 });
             }
         });
 
-        $('#recursos').on('change',function(){
-            var recursos_id = $(this).val();
-            if ($.trim(recursos_id) != ''){
-                $.get('unidadM',{recursos_id: recursos_id},function(unidadM){
+
+        $('#recurso').on('change',function(){
+            var recurso_id = $(this).val();
+            if ($.trim(recurso_id) != ''){
+                $.get('unidadM',{recurso_id: recurso_id},function(unidadM){
                     $('#unidadM').empty();
                     $('#unidadM').append("<option value=''>-- Todas --</option>");
-                    $.each(unidadM, function(index, value){
-                        $('#unidadM').append("<option value='"+ index +"'>"+ value +"</option>");
-                    })
+                    for(var x of recurso){                        
+                        $('#centroC').append("<option value='"+ x.uni_id +"'>"+ x.uni_descripcion +"</option>");
+                    }  
                 });
             }
         });
