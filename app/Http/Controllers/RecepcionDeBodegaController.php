@@ -8,6 +8,7 @@ use App\proovedor;
 use App\usuario;
 use App\unidad_negocio;
 use App\empresa;
+use App\centro_costo_gestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -115,9 +116,7 @@ class RecepcionDeBodegaController extends Controller
     {
        
        
-      $centro_costo=centro_costo::CentroCosto($unidad->input('unidadN_id'))->get(;)
-
-       
+      $centro_costo=centro_costo_gestion::CentroCosto($unidad->input('unidadN_id'))->get();
 
        return response()->json($centro_costo);
     }
