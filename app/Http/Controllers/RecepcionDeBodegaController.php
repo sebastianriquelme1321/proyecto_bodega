@@ -127,15 +127,16 @@ class RecepcionDeBodegaController extends Controller
     }
 
 
-    //  public function getRecurso(Request $unidad_negocio_n)
-    //  {
-    //     $unidad_negocio=unidad_negocio::find($unidad_negocio_n->input('unudadN_id'));
-    //     $recursos=$unidad_negocio->Recurso();
+     public function getRecurso(Request $unidad_negocio_n)
+    {
+       $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get();
+       $lista_final=[];
+        foreach($recurso_unidad as $rec)
+        {
+              $lista_final=recurso::Recurso($rec->rec_id);
+        }
 
-    //     return response()->json($recursos);
+      return response()->json($lista_final);
 
-        
-
-
-    //  }
+    }
 }

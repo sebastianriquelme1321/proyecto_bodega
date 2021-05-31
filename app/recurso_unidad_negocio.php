@@ -11,7 +11,14 @@ class recurso_unidad_negocio extends Model
     protected $table ='recurso_unidad_negocio';
     protected $primaryKey = 'run_id';
 
+    public function scopeRecursoUnidad($query,$unidad_negocio)
+    {
     
+      {
+          return $query->where('uni_id',$unidad_negocio);
+      }
+    }
+
 
     
 }
