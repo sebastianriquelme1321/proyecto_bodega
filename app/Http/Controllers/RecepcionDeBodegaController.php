@@ -109,4 +109,17 @@ class RecepcionDeBodegaController extends Controller
        return response()->json($unidad_negocio);
 
     }
+
+
+    public function getCentroCosto(Request $unidad)
+    {
+       
+       
+      $centro_costo=centro_costo::CentroCosto($unidad->input('unidadN_id'))->get(;)
+
+       
+
+       return response()->json($centro_costo);
+    }
+
 }
