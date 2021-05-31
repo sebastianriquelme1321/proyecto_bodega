@@ -9,6 +9,8 @@ use App\usuario;
 use App\unidad_negocio;
 use App\empresa;
 use App\centro_costo_gestion;
+use App\recurso_unidad_negocio;
+use App\recurso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -29,8 +31,7 @@ class RecepcionDeBodegaController extends Controller
         $empresas=empresa::all();
 
         //$proveedores = proovedor::get();
-                
-
+      
         return view('recepciondebodega.index',compact('lista_final','empresas'));
     }
 
@@ -112,13 +113,23 @@ class RecepcionDeBodegaController extends Controller
     }
 
 
-    public function getCentroCosto(Request $unidad)
+    public function getCentroCosto(Request $unidad_n)
     {
        
        
-      $centro_costo=centro_costo_gestion::CentroCosto($unidad->input('unidadN_id'))->get();
+      $centro_costo=centro_costo_gestion::CentroCosto($unidad_n->input('unidadN_id'))->get();
 
        return response()->json($centro_costo);
     }
 
+
+     public function getRecurso(Request $unidad_negocio_n)
+     {
+        $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get('rec_id');
+        
+        $lista_final=recurso::Recurso($recurso_unidad->input('rec_id'))->get();
+        return response()->json($lista_final);
+
+
+     }
 }
