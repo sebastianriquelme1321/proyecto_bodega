@@ -8,11 +8,15 @@
 @stop
 
 @section('content')
+    <h4>{{$recurso_unidad}}</h4>
+
+    <h4>{{$lista_finalv2}}</h4>
+
     <div class="card">   
         <h4><b>Proveedores</b></h4>   
     
-        <div class="form-check-inline col-4">
-            <div class="form-group">
+        <div class="form-check-inline ">
+            <div class="form-group col-4">
                 <select name="" id="" class="form-control custom-select">
                     
                     <option value="">--Selecione un proveedor --</option>
@@ -28,7 +32,7 @@
 
 
     <div class="card">
-    <div class="form-group">              
+        <div class="form-group">              
             
             <h4><b>Empresa</b></h4>
         
@@ -72,24 +76,27 @@
                     </div>                    
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group" style="padding-bottom: 60px">
                     <div class="form-check ">
                         <h4><b>Centro de costos</b></h4>
                         <select name="" id="centroC" class="form-control custom-select">                    
                             <option value="">-- Todas --</option>                              
-                            
+                            lista_finalv2
                         </select> 
                     </div>
-                                       
+                           
+                    <div class="form-check">
+                        <div class="card"></div> 
+                    </div>          
                 </div>
             </div>
 
-            
+        </div>    
         
     </div>
 
 
-<br>
+
 <div class="card">
     <div class="card-header">
         {{--  Lista de radios  --}}
@@ -101,19 +108,19 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                 </div>
             </div> 
@@ -122,32 +129,15 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-check-inline col-2">    
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                 </div>
             </div>
@@ -156,15 +146,32 @@
                 <div class="form-group">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="radio1" checked="">
-                        <label class="form-check-label">Radio checked</label>
+                        <label class="form-check-label">Test</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-check-inline col-2">    
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Test</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="radio1" checked="">
+                        <label class="form-check-label">Test</label>
                     </div>
                 </div>
             </div>
@@ -183,15 +190,15 @@
             <div class="form-group">
                 <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
-                    <label class="form-check-label">Radio checked</label>
+                    <label class="form-check-label">Test</label>
                 </div>
                 <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
-                    <label class="form-check-label">Radio checked</label>
+                    <label class="form-check-label">Test</label>
                 </div>
                 <div class="form-check-inline col-2">
                     <input class="form-check-input" type="radio" name="radio2" checked="">
-                    <label class="form-check-label">Radio checked</label>
+                    <label class="form-check-label">Test</label>
                 </div>
             </div>           
 
@@ -207,7 +214,7 @@
         
         <div class="form-row">
             <div class="col-1"></div>
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
               <h5><b>Texto para buscar:</b></h5>
               <input type="text" class="form-control" id="">
             </div>
@@ -216,8 +223,19 @@
               <input type="text" class="form-control" id="">
             </div>            
         </div>
-        
-        <button type="button" class="btn btn-block btn-primary">Buscar</button>
+             
+        <center>   
+            <div>
+                <div class="form-check-inline col-4">                        
+                    
+                        <div class="form-check col-6">
+                            <button type="button" class="btn btn-block btn-primary">Buscar</button>
+                        </div>            
+                    
+                </div>     
+                 
+            </div>
+        </center>
 
     </div>
     <!-- /.card-header -->
@@ -230,12 +248,12 @@
                         <tr>
                             <th>Fecha</th>
                             <th>Numero OP</th>
-                            <th>Nombre algo</th>
-                            <th>Numero OP</th>
-                            <th>asdasd</th>
-                            <th>hgjghj</th>
-                            <th>hjkhjk</th>
-                            <th>werwerwer</th>                            
+                            <th>Nombre</th>
+                            <th>Numero</th>
+                            <th>Test</th>
+                            <th>Test</th>
+                            <th>Test</th>
+                            <th>Test</th>                            
                         </tr>
                     </thead>
                 </table>
@@ -252,12 +270,26 @@
         </div>        
     </div>
     <!-- /.card-header -->
+    <center>   
+        <div>
+            <div class="form-check-inline col-4">                        
+                
+                    <div class="form-check col-6">
+                        <button type="button" class="btn btn-block btn-success">Aceptar</button>
+                    </div>            
+                
+            </div> 
 
-    <button type="button" class="btn btn-block btn-success">Success</button>
-    <button type="button" class="btn btn-block btn-danger">Danger</button>
-
-</div>
-
+            <div class="form-check-inline col-4">   
+                
+                    <div class="form-check col-6">
+                        <button type="button" class="btn btn-block btn-danger" onclick="return confirm('¿Esta seguro?');">Eliminar</button>
+                    </div>           
+                
+            </div>    
+        </div>
+    </center>
+    
 @stop
 
 @section('footer')

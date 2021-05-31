@@ -30,9 +30,13 @@ class RecepcionDeBodegaController extends Controller
 
         $empresas=empresa::all();
 
+        $recurso_unidad=recurso_unidad_negocio::RecursoUnidad(1)->get('rec_id');
+        
+        $lista_finalv2=recurso::Recurso($recurso_unidad)->get();
+
         //$proveedores = proovedor::get();
       
-        return view('recepciondebodega.index',compact('lista_final','empresas'));
+        return view('recepciondebodega.index',compact('lista_final','empresas','lista_finalv2','recurso_unidad'));
     }
 
     /**

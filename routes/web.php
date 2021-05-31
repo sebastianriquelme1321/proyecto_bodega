@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('recepciondebodega', '\App\Http\Controllers\RecepcionDeBodegaController@index');
 Route::get('/unidadN','\App\Http\Controllers\RecepcionDeBodegaController@getUnidadNegocio');
 Route::get('/centroC','\App\Http\Controllers\RecepcionDeBodegaController@getCentroCosto');
+Route::get('/recurso','\App\Http\Controllers\RecepcionDeBodegaController@getRecurso');
