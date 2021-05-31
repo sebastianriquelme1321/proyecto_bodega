@@ -17,12 +17,12 @@ class unidad_negocio extends Model
       
     }
 
-    public function Recurso()
-    {
+    // public function recurso()
+    // {
         
-      return $this->belongsToMany(recurso::class)->using(recurso_unidad_negocio::class);
+    //   return $this->belongsToMany(recurso::class)->using(recurso_unidad_negocio::class);
             
-    }
+    // }
 }
 
 

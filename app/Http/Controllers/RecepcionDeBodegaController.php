@@ -109,7 +109,7 @@ class RecepcionDeBodegaController extends Controller
     {
        
        
-      $unidad_negocio=unidad_negocio::Unidad($empresa->input('empresa_id'))->get();
+      $unidad_negocio=unidad_negocio::recurso($empresa->input('empresa_id'))->get();
        
 
        return response()->json($unidad_negocio);
@@ -127,15 +127,15 @@ class RecepcionDeBodegaController extends Controller
     }
 
 
-     public function getRecurso(Request $unidad_negocio_n)
-     {
-        $unidad_negocio=unidad_negocio::find($unidad_negocio_n->input('unudadN_id'));
-        $recursos=$unidad_negocio->Recurso();
+    //  public function getRecurso(Request $unidad_negocio_n)
+    //  {
+    //     $unidad_negocio=unidad_negocio::find($unidad_negocio_n->input('unudadN_id'));
+    //     $recursos=$unidad_negocio->Recurso();
 
-        return response()->json($recursos);
+    //     return response()->json($recursos);
 
         
 
 
-     }
+    //  }
 }
