@@ -8,8 +8,9 @@
 @stop
 
 @section('content')   
-
-    <div class="card">   
+    
+     
+    {{--  <div class="card">   
         <h4><b>Proveedores</b></h4>   
     
         <div class="form-check-inline ">
@@ -24,7 +25,7 @@
                 </select>     
             </div>  
         </div>
-    </div>
+    </div>  --}}
 
 
 
@@ -315,7 +316,7 @@
             var empresa_id = $(this).val();
             if ($.trim(empresa_id) != ''){
 
-                console.log(empresa_id);
+                
 
                 $.get('unidadN',{empresa_id: empresa_id},function(unidadN){
                     $('#unidadN').empty();
@@ -341,26 +342,14 @@
                 $.get('recurso',{unidadN_id: unidadN_id},function(recurso){
                     $('#recurso').empty();
                     $('#recurso').append("<option value=''>-- Todas --</option>");
-                    for(var x of recurso){                        
-                        $('#centroC').append("<option value='"+ x.rec_id +"'>"+ x.rec_descripcion +"</option>");
+                    for(var x of recurso){     
+                        console.log(x);                                         
+                        $('#recurso').append("<option value='"+ x.rec_id +"'>"+ x.rec_descripcion +"</option>");
                     }   
                 });
             }
         });
-
-
-        $('#recurso').on('change',function(){
-            var recurso_id = $(this).val();
-            if ($.trim(recurso_id) != ''){
-                $.get('unidadM',{recurso_id: recurso_id},function(unidadM){
-                    $('#unidadM').empty();
-                    $('#unidadM').append("<option value=''>-- Todas --</option>");
-                    for(var x of recurso){                        
-                        $('#centroC').append("<option value='"+ x.uni_id +"'>"+ x.uni_descripcion +"</option>");
-                    }  
-                });
-            }
-        });
+       
 
     });
 

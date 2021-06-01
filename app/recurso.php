@@ -12,7 +12,7 @@ class recurso extends Model
     protected $primaryKey = 'rec_id';
     public function scopeRecurso($query,$unidad)
     {
-     return $query->where('rec_id',$unidad);
+     return $query->where('rec_id','=',$unidad);
       
     }
     

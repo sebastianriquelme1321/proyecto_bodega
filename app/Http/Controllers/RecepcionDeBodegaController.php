@@ -24,9 +24,9 @@ class RecepcionDeBodegaController extends Controller
      */
     public function index()
     {
-        $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
-        $lista_prv=$proveedores->json();
-        $lista_final=$lista_prv['data'];
+        //$proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
+        //$lista_prv=$proveedores->json();
+        //$lista_final=$lista_prv['data'];
 
         $empresas=empresa::all();
 
@@ -35,8 +35,13 @@ class RecepcionDeBodegaController extends Controller
         //$lista_finalv2=recurso::Recurso($recurso_unidad)->get();
 
         //$proveedores = proovedor::get();
+
+        //$recurso_unidad=recurso_unidad_negocio::RecursoUnidad(1)->get();
+
+        $recurso_finalV5=recurso::Recurso(1)->get();
+        
       
-        return view('recepciondebodega.index',compact('lista_final','empresas'));
+        return view('recepciondebodega.index',compact('empresas','recurso_finalV5'));
     }
 
     /**
@@ -130,13 +135,16 @@ class RecepcionDeBodegaController extends Controller
      public function getRecurso(Request $unidad_negocio_n)
     {
        $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get();
-       $lista_final=[];
-        foreach($recurso_unidad as $rec)
+       $aux = json_decode($recurso_unidad,true);
+       $recurso_final=[];
+        foreach($aux as $rec)
         {
-              $lista_final=recurso::Recurso($rec->rec_id);
+              $recurso_final=recurso::Recurso($rec['rec_id'])->get();
         }
 
-      return response()->json($lista_final);
+        
+
+      return response()->json($recurso_final);
 
     }
 }
