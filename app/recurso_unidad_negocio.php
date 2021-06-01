@@ -11,7 +11,7 @@ class recurso_unidad_negocio extends Model
     protected $table ='recurso_unidad_negocio';
     protected $primaryKey = 'run_id';
 
-    public function scopeRecursoUnidad($query,$unidad_negocio)
+    public function scopeRecursoUnidad($query,$unidad_negocio)//Funcion la cual busca el recurso_unidad comparando "unn_id"
     {
     
       {

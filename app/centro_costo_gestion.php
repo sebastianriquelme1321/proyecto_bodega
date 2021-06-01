@@ -8,11 +8,11 @@ class centro_costo_gestion extends Model
 {
     //
 
-    protected $table ='centro_costo_gestion';
+    protected $table ='centro_costo_gestion'; 
     protected $primaryKey = 'cec_id';
 
 
-    public function scopeCentrocosto($query,$unidad_negocio)
+    public function scopeCentrocosto($query,$unidad_negocio) //Funcion la cual busca el centro de costo comparando "unn_id"
     {
       if($unidad_negocio)
       {

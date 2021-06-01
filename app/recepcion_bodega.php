@@ -9,7 +9,7 @@ class recepcion_bodega extends Model
     //   
     protected $table ='recepcion_bodega';
     protected $primaryKey = 'rbo_id';
-
+    ///Relaciones  de la recepcion bodega
     public function documento_tributario(){
         return $this->hasMany(documento_tributario::class);
     }
