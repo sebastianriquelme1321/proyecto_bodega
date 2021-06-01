@@ -15,7 +15,7 @@ class recurso_unidad_negocio extends Model
     {
     
       {
-          return $query->where('uni_id',$unidad_negocio);
+          return $query->where('unn_id',$unidad_negocio);
       }
     }
 
