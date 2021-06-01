@@ -5,7 +5,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+</p> 
 
 
 
@@ -19,6 +19,6 @@
 
 
 
-Aplicacion de prueba desarrollada por:
-Bastián Candia 
-Sebastián Riquelme
+Aplicacion de prueba desarrollada por:<br>
+Bastián Candia <br>
+Sebastián Riquelme<br>
