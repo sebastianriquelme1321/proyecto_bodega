@@ -8,6 +8,12 @@
 </p> 
 
 
+Para poder usarlo se deben instalar las siguientes librerias:<br>
+<a href="https://github.com/jeroennoten/Laravel-AdminLTE"></a>
+composer require jeroennoten/laravel-adminlte
+php artisan adminlte:install
+
+
 
 
 
