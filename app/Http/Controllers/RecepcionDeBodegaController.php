@@ -25,14 +25,15 @@ class RecepcionDeBodegaController extends Controller
      */
     public function index()
     {
-        $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
-        $lista_prv=$proveedores->json();
-        $lista_final=$lista_prv['data'];
+        $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100'); ///Se accede a la API
+        $lista_prv=$proveedores->json();                                           //Se transforma lo obtenido de la API a json
+        $lista_final=$lista_prv['data'];                                           //Se selecciona la data del json
 
-        $empresas=empresa::all();      
+        $empresas=empresa::all();                                                  //Se solicita a la base de datos todas las empresas
         
       
-        return view('recepciondebodega.index',compact('lista_final','empresas'));
+        return view('recepciondebodega.index',compact('lista_final','empresas'));  //Se retorna la visa y se le pasan las empresas como tambien los datos de los proveedores 
+                                                                                   //obtenidos de la API
     }
 
     /**
@@ -101,48 +102,46 @@ class RecepcionDeBodegaController extends Controller
         //
     }
 
-    public function getUnidadNegocio(Request $empresa)
+    public function getUnidadNegocio(Request $empresa) //Funcion que busca las unidades de negocio dependiendo de la empresa seleccionada 
     {
        
        
-      $unidad_negocio=unidad_negocio::Unidad($empresa->input('empresa_id'))->get();
+      $unidad_negocio=unidad_negocio::Unidad($empresa->input('empresa_id'))->get(); //LLamada a la funcion unidad que a su vez realiza la consulta a la base de datos
        
 
-       return response()->json($unidad_negocio);
+       return response()->json($unidad_negocio);      //Le envía las unidades de neogico a la vista 
 
     }
 
 
-    public function getCentroCosto(Request $unidad_n)
+    public function getCentroCosto(Request $unidad_n)  //Funcion que busca los centros de costo dependiendo de la unidad de negococio seleccionada
     {
        
        
-      $centro_costo=centro_costo_gestion::CentroCosto($unidad_n->input('unidadN_id'))->get();
+      $centro_costo=centro_costo_gestion::CentroCosto($unidad_n->input('unidadN_id'))->get(); //LLamada a la funcion CentroCosto que a su vez realiza la consulta a la base de datos
 
-       return response()->json($centro_costo);
+       return response()->json($centro_costo);  //Le envía las unidades de neogico a la vista 
+
     }
 
 
-     public function getRecurso(Request $unidad_negocio_n)
+    public function getRecurso(Request $unidad_negocio_n)  //Funcion que busca los recursos de dependiendo de la unidad de negococio seleccionad
     {
-       $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get();
-       $aux = json_decode($recurso_unidad,true);
+       $recurso_unidad=recurso_unidad_negocio::RecursoUnidad($unidad_negocio_n->input('unidadN_id'))->get(); //LLamada a la funcion RecursoUnidad que a su vez realiza la consulta a la base de datos
+       $aux = json_decode($recurso_unidad,true);  //Para poder recorrer el json debemos decodificarlo para que quede como un array
        $recurso_final=[];
         foreach($aux as $rec)
         {
-              $recurso_final=recurso::Recurso($rec['rec_id'])->get();
+              $recurso_final=recurso::Recurso($rec['rec_id'])->get();  //Llamada a la funcion Recurso el cual a su vez realiza la consulta a la base de datos
         }
-
-        
-
-      return response()->json($recurso_final);
+        return response()->json($recurso_final); //Le envía  los recursos a la vista
 
     }
 
-    public function getUnidadMedida(Request $recurso)
+    public function getUnidadMedida(Request $recurso) //Funcion que busca la unidad de medida,dependiendo del recurso seleccionado
     {
-        $unidad_medida=unidad::UnidadMedida($recurso->input('recurso_id'))->get();
-        return response()->json($unidad_medida);
+        $unidad_medida=unidad::UnidadMedida($recurso->input('recurso_id'))->get(); //Llamada a la funcion UnidadMedida la cual realiza la consulta a la base de datos
+        return response()->json($unidad_medida);  // Le envía a la vista la unidad de medida correspondiente
 
     }
     
