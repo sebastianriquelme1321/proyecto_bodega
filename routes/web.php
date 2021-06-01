@@ -21,3 +21,4 @@ Route::get('recepciondebodega', '\App\Http\Controllers\RecepcionDeBodegaControll
 Route::get('/unidadN','\App\Http\Controllers\RecepcionDeBodegaController@getUnidadNegocio');
 Route::get('/centroC','\App\Http\Controllers\RecepcionDeBodegaController@getCentroCosto');
 Route::get('/recurso','\App\Http\Controllers\RecepcionDeBodegaController@getRecurso');
+Route::get('/unidadM','\App\Http\Controllers\RecepcionDeBodegaController@getUnidadMedida');

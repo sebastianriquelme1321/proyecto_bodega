@@ -11,6 +11,7 @@ use App\empresa;
 use App\centro_costo_gestion;
 use App\recurso_unidad_negocio;
 use App\recurso;
+use App\unidad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -147,4 +148,13 @@ class RecepcionDeBodegaController extends Controller
       return response()->json($recurso_final);
 
     }
+
+    public function getUnidadMedidad(Request $recurso)
+    {
+        $unidad_medida=unidad::UnidadMedidad($recurso->input('recurso_id'));
+        return response()->json($unidad_medida);
+
+    }
+    
+
 }
