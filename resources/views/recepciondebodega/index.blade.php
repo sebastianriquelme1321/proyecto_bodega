@@ -349,6 +349,19 @@
                 });
             }
         });
+
+        $('#recurso').on('change',function(){
+            var recurso_id = $(this).val();
+            if ($.trim(recurso_id) != ''){
+                $.get('unidadM',{recurso_id: recurso_id},function(unidadM){
+                    $('#unidadM').empty();
+                    $('#unidadM').append("<option value=''>-- Todas --</option>");
+                    for(var x of recurso){
+                        $('#unidadM').append("<option value='"+ x.uni_id +"'>"+ x.uni_descripcion +"</option>");
+                    }
+                });
+            }
+        });
        
 
     });
