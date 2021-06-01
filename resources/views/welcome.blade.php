@@ -29,7 +29,4 @@
 
 @section('js')
 
-
-
-
-stop
+@stop

@@ -25,24 +25,14 @@ class RecepcionDeBodegaController extends Controller
      */
     public function index()
     {
-        //$proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
-        //$lista_prv=$proveedores->json();
-        //$lista_final=$lista_prv['data'];
+        $proveedores=Http::get('https://api.3e.cl/api/proveedor?skip=0&take=100');
+        $lista_prv=$proveedores->json();
+        $lista_final=$lista_prv['data'];
 
-        $empresas=empresa::all();
-
-        //$recurso_unidad=recurso_unidad_negocio::RecursoUnidad(1)->get('rec_id');
-        
-        //$lista_finalv2=recurso::Recurso($recurso_unidad)->get();
-
-        //$proveedores = proovedor::get();
-
-        //$recurso_unidad=recurso_unidad_negocio::RecursoUnidad(1)->get();
-
-        $recurso_finalV5=recurso::Recurso(1)->get();
+        $empresas=empresa::all();      
         
       
-        return view('recepciondebodega.index',compact('empresas','recurso_finalV5'));
+        return view('recepciondebodega.index',compact('lista_final','empresas'));
     }
 
     /**
@@ -149,9 +139,9 @@ class RecepcionDeBodegaController extends Controller
 
     }
 
-    public function getUnidadMedidad(Request $recurso)
+    public function getUnidadMedida(Request $recurso)
     {
-        $unidad_medida=unidad::UnidadMedidad($recurso->input('recurso_id'));
+        $unidad_medida=unidad::UnidadMedida($recurso->input('recurso_id'))->get();
         return response()->json($unidad_medida);
 
     }
